@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 const { Sequelize, DataTypes } = require('sequelize');
 
 let init = async () => {
-  const sequelize = new Sequelize('sequelize', 'sequelize', 'mypassword', {
-    dialect: 'mariadb',
-    host: 'MariaDbGrouPomania.org',
-    //logging: true,//passer a true pour voir les différentes requêtes effectuées par l'ORM
+  const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+    dialect: 'mysql',
+    //dialect: 'mariadb',
+    host: 'localhost',
   });
 
   /* Si on veut tester la connexion 
@@ -15,7 +17,7 @@ let init = async () => {
     console.error('Unable to connect to the database:', error);
   }
   */
- 
+
   const User = sequelize.define('User', {
     // Model attributes are defined here
     firstName: {
