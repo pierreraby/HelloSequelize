@@ -7,13 +7,15 @@ let init = async () => {
     //logging: true,//passer a true pour voir les différentes requêtes effectuées par l'ORM
   });
 
+  /* Si on veut tester la connexion 
   try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
-
+  */
+ 
   const User = sequelize.define('User', {
     // Model attributes are defined here
     firstName: {
