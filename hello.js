@@ -6,8 +6,8 @@ let init = async () => {
   const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
     dialect: 'mysql',
     //dialect: 'mariadb',
-    //host: 'localhost',
-    host: '10.217.138.124' ,
+    host: 'localhost',
+    //host: '10.217.138.124' ,
   });
 
   /* Si on veut tester la connexion */
